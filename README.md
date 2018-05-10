@@ -3,9 +3,11 @@
 Simple HTTP elastic search library.
 
 
-## Usage
-
-TODO
+## Backlog
+* Finish README.md
+* Documentation
+* Examples
+* Testing
 
 
 ## Copyright and License
