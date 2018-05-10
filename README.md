@@ -2,6 +2,8 @@
 
 Simple HTTP elastic search library.
 
+![Find anything yet?](http://i.imgur.com/xpJhQoF.gif)
+
 
 ## Backlog
 * Finish README.md
