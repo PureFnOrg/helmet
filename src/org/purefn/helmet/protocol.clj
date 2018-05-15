@@ -7,6 +7,7 @@
   (delete-index [this index])
   (alias-indices [this alias indices])
   (get-indices [this alias])
+  (list-indices [this])
   (add-document [this index id document] [this index type id document] )
   (bulk-add-documents [this index documents] [this index type documents])
   (update-document [this index id delta] [this index type id delta])

@@ -13,6 +13,11 @@
   (cond-> (str/join "/" (filter some? args))
     trail? (str "/")))
 
+(defn- for-alias?
+  "True if idx belongs to alias name."
+  [alias-name idx]
+  (str/starts-with? idx (str alias-name "-2")))
+
 (defrecord HTTPElasticsearch [config]
 
   proto/Elasticsearch
@@ -64,6 +69,15 @@
           (:body)
           (json/parse-string)
           (keys)))
+
+  (list-indices [_]
+    (->> (http/get (gen-url false (::url config) "/_cat/indices?v"))
+         :body
+         (str/split-lines)
+         (map #(str/split % #"[ ]+"))
+         (rest)
+         (map #(nth % 2))
+         (sort)))
 
   (add-document [this index id document]
     (proto/add-document this index nil id document))

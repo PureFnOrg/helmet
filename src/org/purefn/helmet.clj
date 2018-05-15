@@ -37,6 +37,11 @@
   [es alias]
   (proto/get-indices es alias))
 
+(defn list-indices
+  "Lists all indices at given elasticsearch URL."
+  [es]
+  (proto/list-indices es))
+
 (defn add-document
   "Adds document of type with specified id to index."
   ([es index id document]
@@ -153,6 +158,10 @@
         :args (s/cat :es helmet?
                      :alias ::alias-name)
         :ret ::aliases)
+
+(s/fdef list-indices
+        :args (s/cat :es helmet?)
+        :ret ::indices)
 
 (s/fdef add-document
         :args (s/cat :es helmet? :index ::index-name :type ::doctype :id ::id :doc ::document)
