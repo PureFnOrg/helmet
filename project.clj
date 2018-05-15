@@ -1,4 +1,4 @@
-(defproject helmet "0.1.0-SNAPSHOT"
+(defproject org.purefn/helmet "0.1.0-SNAPSHOT"
   :description "A simple componentized http elastic search library."
   :url "https://github.com/PureFnOrg/helmet"
   :license {:name "Eclipse Public License"
